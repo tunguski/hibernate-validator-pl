@@ -8,7 +8,7 @@ import javax.validation.ConstraintValidatorContext;
  *
  * @author marian
  */
-public class ISBNValidator extends ValidatorBase<ISBN> {
+public class ISBNValidator extends ValidatorBase<ISBN, String> {
 
 	public boolean isValid(String value, ConstraintValidatorContext context) {
 		if (value == null) {

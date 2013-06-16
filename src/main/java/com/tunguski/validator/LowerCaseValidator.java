@@ -11,7 +11,7 @@ import org.apache.commons.lang.StringUtils;
  *
  * @author marian
  */
-public class LowerCaseValidator extends ValidatorBase<LowerCase> {
+public class LowerCaseValidator extends ValidatorBase<LowerCase, String> {
 
 
 	public boolean isValid(String value, ConstraintValidatorContext context) {

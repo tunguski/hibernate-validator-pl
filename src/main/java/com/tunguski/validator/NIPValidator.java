@@ -11,7 +11,7 @@ import javax.validation.ConstraintValidatorContext;
  * @author marian
  * @version 0.3
  */
-public class NIPValidator extends ValidatorBase<NIP> {
+public class NIPValidator extends ValidatorBase<NIP, String> {
 
 	public boolean isValid(String value, ConstraintValidatorContext context) {
 		if (value == null) {

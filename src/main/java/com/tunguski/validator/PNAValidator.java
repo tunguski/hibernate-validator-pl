@@ -11,7 +11,7 @@ import javax.validation.ConstraintValidatorContext;
  * @author marian
  * @version 0.3
  */
-public class PNAValidator extends ValidatorBase<PNA> {
+public class PNAValidator extends ValidatorBase<PNA, String> {
 
 
 	public boolean isValid(String value, ConstraintValidatorContext context) {

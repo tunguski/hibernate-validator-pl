@@ -5,7 +5,7 @@ import java.lang.annotation.Annotation;
 import javax.validation.ConstraintValidator;
 
 
-public abstract class ValidatorBase<A extends Annotation> implements ConstraintValidator<A, String> {
+public abstract class ValidatorBase<A extends Annotation, B> implements ConstraintValidator<A, B> {
 
 
   protected A annotation;

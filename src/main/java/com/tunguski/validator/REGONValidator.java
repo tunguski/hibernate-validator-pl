@@ -13,7 +13,7 @@ import org.apache.commons.lang.StringUtils;
  * @author marian <mariuszs@gmail.com>
  * @version 0.3
  */
-public class REGONValidator extends ValidatorBase<REGON> {
+public class REGONValidator extends ValidatorBase<REGON, String> {
 
 
 	public boolean isValid(String value, ConstraintValidatorContext context) {

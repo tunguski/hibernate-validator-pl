@@ -12,7 +12,7 @@ import javax.validation.ConstraintValidatorContext;
  * @author marian
  * @version 0.3
  */
-public class PESELValidator extends ValidatorBase<PESEL> {
+public class PESELValidator extends ValidatorBase<PESEL, String> {
 
 
 	public boolean isValid(String value, ConstraintValidatorContext context) {

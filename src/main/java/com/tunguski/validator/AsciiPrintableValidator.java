@@ -11,7 +11,7 @@ import org.apache.commons.lang.StringUtils;
  *
  * @author marian
  */
-public class AsciiPrintableValidator extends ValidatorBase<AsciiPrintable> {
+public class AsciiPrintableValidator extends ValidatorBase<AsciiPrintable, String> {
 
 
 	public boolean isValid(String value, ConstraintValidatorContext context) {
