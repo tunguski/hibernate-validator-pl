@@ -14,13 +14,22 @@ import java.util.List;
 public class Validators {
 
 
-	public static boolean isValidREGON(String regon) {
-	  if (regon.length() == 9) {
+	private static final List<Integer> PWZ_WEIGHTS = asList(1, 2, 3, 4, 5, 6);
+  private static final List<Integer> PESEL_WEIGHTS = asList(1, 3, 7, 9, 1, 3, 7, 9, 1, 3);
+  private static final List<Integer> REGON_14__WEIGHTS = asList(2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8);
+  private static final List<Integer> REGON_9_WEIGHTS = asList(8, 9, 2, 3, 4, 5, 6, 7);
+  private static final List<Integer> NIP_WEIGHTS = asList(6, 5, 7, 2, 3, 4, 5, 6, 7);
+
+
+  public static boolean isValidREGON(String regon) {
+    if (regon == null) {
+      return false;
+    } else if (regon.length() == 9) {
 	    return tenToZero(countSummary(regon,
-	        asList(8, 9, 2, 3, 4, 5, 6, 7)) % 11) == control(regon);
+	        REGON_9_WEIGHTS) % 11) == control(regon);
 	  } else if (regon.length() == 14) {
       return tenToZero(countSummary(regon,
-          asList(2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8)) % 11) == control(regon);
+          REGON_14__WEIGHTS) % 11) == control(regon);
 	  } else {
 	    return false;
 	  }
@@ -28,19 +37,31 @@ public class Validators {
 
 
 	public static boolean isValidPESEL(String pesel) {
-    Integer sum = 10 - countSummary(pesel, asList(1, 3, 7, 9, 1, 3, 7, 9, 1, 3)) % 10;
-    return tenToZero(sum) == control(pesel);
+	  if (pesel != null && pesel.length() == PESEL_WEIGHTS.size() + 1) {
+	    Integer sum = 10 - countSummary(pesel, PESEL_WEIGHTS) % 10;
+	    return tenToZero(sum) == control(pesel);
+	  } else {
+	    return false;
+	  }
 	}
 
 
 	public static boolean isValidNIP(String nip) {
-    return elevenValidation(nip, asList(6, 5, 7, 2, 3, 4, 5, 6, 7));
+	  if (nip != null && nip.length() == NIP_WEIGHTS.size() + 1) {
+	    return elevenValidation(nip, NIP_WEIGHTS);
+    } else {
+      return false;
+    }
 	}
 
 
   public static boolean isValidPWZ(String pwz) {
-    Integer sum = countSummary(pwz.substring(1) + "X", asList(1, 2, 3, 4, 5, 6));
-    return sum % 11 == Integer.valueOf("" + pwz.charAt(0));
+    if (pwz != null && pwz.length() == PWZ_WEIGHTS.size() + 1) {
+      Integer sum = countSummary(pwz.substring(1) + "X", PWZ_WEIGHTS);
+      return sum % 11 == Integer.valueOf("" + pwz.charAt(0));
+    } else {
+      return false;
+    }
   }
 
 

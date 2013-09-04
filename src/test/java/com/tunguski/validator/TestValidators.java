@@ -7,8 +7,8 @@ import org.junit.Test;
 
 
 /**
- * Testy poprawności walidacji.
- * @author Marek Romanowski
+ * Validation tests.
+ * @author tunguski <tunguskii@gmail.com>
  * @since Sep 4, 2013
  */
 public class TestValidators {
@@ -26,6 +26,9 @@ public class TestValidators {
     assertTrue(isValidPESEL("82030404957"));
     assertFalse(isValidPESEL("82030404958"));
     assertFalse(isValidPESEL("82030404959"));
+
+    assertFalse(isValidPESEL("820304"));
+    assertFalse(isValidPESEL(null));
   }
 
 
@@ -38,6 +41,9 @@ public class TestValidators {
     assertFalse(isValidREGON("017319025"));
     assertFalse(isValidREGON("277586362"));
     assertFalse(isValidREGON("390021767"));
+
+    assertFalse(isValidREGON("390021"));
+    assertFalse(isValidREGON(null));
   }
 
 
@@ -50,6 +56,9 @@ public class TestValidators {
     assertFalse(isValidNIP("9542381967"));
     assertFalse(isValidNIP("1132316421"));
     assertFalse(isValidNIP("6920000018"));
+
+    assertFalse(isValidNIP("6920000"));
+    assertFalse(isValidNIP(null));
   }
 
 
@@ -62,6 +71,9 @@ public class TestValidators {
     assertFalse(isValidPWZ("7473565"));
     assertFalse(isValidPWZ("3864101"));
     assertFalse(isValidPWZ("1617664"));
+
+    assertFalse(isValidPWZ("16176"));
+    assertFalse(isValidPWZ(null));
   }
 }
 

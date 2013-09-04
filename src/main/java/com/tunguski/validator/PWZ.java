@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 
 import javax.validation.Constraint;
 
-@Constraint(validatedBy={PESELValidator.class})
+@Constraint(validatedBy={PWZValidator.class})
 @Target( { METHOD, FIELD })
 @Retention(RUNTIME)
 @Documented
