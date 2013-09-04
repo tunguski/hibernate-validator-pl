@@ -10,7 +10,7 @@ import javax.validation.ConstraintValidatorContext;
  * http://pl.wikipedia.org/wiki/PESEL
  *
  * @author marian
- * @version 0.3
+ * @author tunguski <tunguskii@gmail.com>
  */
 public class PESELValidator extends ValidatorBase<PESEL, String> {
 

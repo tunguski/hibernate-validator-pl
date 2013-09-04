@@ -9,7 +9,7 @@ import javax.validation.ConstraintValidatorContext;
  * http://pl.wikipedia.org/wiki/Kod_pocztowy
  *
  * @author marian
- * @version 0.3
+ * @author tunguski <tunguskii@gmail.com>
  */
 public class PNAValidator extends ValidatorBase<PNA, String> {
 

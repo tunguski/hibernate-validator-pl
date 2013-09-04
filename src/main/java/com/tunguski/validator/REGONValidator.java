@@ -11,7 +11,7 @@ import org.apache.commons.lang.StringUtils;
  * http://pl.wikipedia.org/wiki/REGON
  *
  * @author marian <mariuszs@gmail.com>
- * @version 0.3
+ * @author tunguski <tunguskii@gmail.com>
  */
 public class REGONValidator extends ValidatorBase<REGON, String> {
 

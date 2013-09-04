@@ -9,7 +9,7 @@ import javax.validation.ConstraintValidatorContext;
  * http://pl.wikipedia.org/wiki/NIP
  *
  * @author marian
- * @version 0.3
+ * @author tunguski <tunguskii@gmail.com>
  */
 public class NIPValidator extends ValidatorBase<NIP, String> {
 
