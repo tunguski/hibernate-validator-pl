@@ -8,11 +8,13 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 import javax.validation.Constraint;
+import javax.validation.constraints.Pattern;
 
 @Constraint(validatedBy={REGONValidator.class})
 @Target( { METHOD, FIELD })
 @Retention(RUNTIME)
 @Documented
+@Pattern(regexp = "[0-9]{9,14}")
 public @interface REGON {
 
 	boolean digitsOnly() default false;
