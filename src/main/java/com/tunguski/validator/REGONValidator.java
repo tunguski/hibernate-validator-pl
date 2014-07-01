@@ -1,8 +1,8 @@
 package com.tunguski.validator;
 
-import javax.validation.ConstraintValidatorContext;
-
 import org.apache.commons.lang.StringUtils;
+
+import javax.validation.ConstraintValidatorContext;
 
 
 /**

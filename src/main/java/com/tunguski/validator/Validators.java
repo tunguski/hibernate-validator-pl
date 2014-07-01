@@ -1,8 +1,8 @@
 package com.tunguski.validator;
 
-import static java.util.Arrays.*;
-
 import java.util.List;
+
+import static java.util.Arrays.*;
 
 
 /**

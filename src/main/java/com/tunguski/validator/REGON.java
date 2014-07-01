@@ -1,14 +1,13 @@
 package com.tunguski.validator;
 
-import static java.lang.annotation.ElementType.*;
-import static java.lang.annotation.RetentionPolicy.*;
-
+import javax.validation.Constraint;
+import javax.validation.constraints.Pattern;
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import javax.validation.Constraint;
-import javax.validation.constraints.Pattern;
+import static java.lang.annotation.ElementType.*;
+import static java.lang.annotation.RetentionPolicy.*;
 
 @Constraint(validatedBy={REGONValidator.class})
 @Target( { METHOD, FIELD })

@@ -1,9 +1,9 @@
 package com.tunguski.validator;
 
+import org.junit.Test;
+
 import static com.tunguski.validator.Validators.*;
 import static org.junit.Assert.*;
-
-import org.junit.Test;
 
 
 /**
