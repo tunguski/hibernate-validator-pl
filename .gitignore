@@ -4,4 +4,4 @@
 target
 *.iml
 .idea
-.coveralls.yml
+.coveralls.*
