@@ -13,7 +13,7 @@ import static java.lang.annotation.RetentionPolicy.*;
 @Target( { METHOD, FIELD })
 @Retention(RUNTIME)
 @Documented
-@Pattern(regexp = "[0-9]{9,14}")
+@Pattern(regexp = "[0-9]{9}|[0-9]{14}")
 public @interface REGON {
 
 	boolean digitsOnly() default false;

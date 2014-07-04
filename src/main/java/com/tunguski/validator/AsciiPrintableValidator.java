@@ -15,23 +15,6 @@ public class AsciiPrintableValidator extends ValidatorBase<AsciiPrintable, Strin
 
 
 	public boolean isValid(String value, ConstraintValidatorContext context) {
-		if (value == null) {
-			return true;
-		}
-
-		String ascii = null;
-
-		if (value instanceof String) {
-			ascii = value;
-		} else {
-      return false;
-    }
-
-		if (!StringUtils.isAsciiPrintable(ascii)) {
-			return false;
-		}
-
-		return true;
-
+		return value == null || StringUtils.isAsciiPrintable(value);
 	}
 }

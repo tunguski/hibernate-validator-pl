@@ -14,10 +14,6 @@ import javax.validation.ConstraintValidatorContext;
 public class NIPValidator extends ValidatorBase<NIP, String> {
 
 	public boolean isValid(String value, ConstraintValidatorContext context) {
-		if (value == null) {
-			return true;
-		}
-
-		return Validators.isValidNIP(removeNonDigit(value));
+		return value == null || Validators.isValidNIP(removeNonDigit(value));
 	}
 }

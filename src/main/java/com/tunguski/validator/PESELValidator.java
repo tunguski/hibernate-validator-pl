@@ -16,10 +16,6 @@ public class PESELValidator extends ValidatorBase<PESEL, String> {
 
 
 	public boolean isValid(String value, ConstraintValidatorContext context) {
-		if (value == null) {
-			return true;
-		}
-
-		return Validators.isValidPESEL(removeNonDigit(value));
+		return value == null || Validators.isValidPESEL(removeNonDigit(value));
 	}
 }

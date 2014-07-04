@@ -14,7 +14,7 @@ import static java.lang.annotation.RetentionPolicy.*;
 @Documented
 public @interface ISBN {
 
-	String message() default "invalid unicode letters";
+	String message() default "invalid ISBN number";
   Class[] groups() default {};
   Class[] payload() default {};
 }

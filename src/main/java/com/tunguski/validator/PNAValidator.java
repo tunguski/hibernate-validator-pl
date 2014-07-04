@@ -15,15 +15,7 @@ public class PNAValidator extends ValidatorBase<PNA, String> {
 
 
 	public boolean isValid(String value, ConstraintValidatorContext context) {
-		if (value == null) {
-			return true;
-		}
-
-		if (removeNonDigit(value).length() != 5) {
-			return false;
-		}
-
-		return true;
+		return value == null || removeNonDigit(value).length() == 5;
 
 	}
 

@@ -14,7 +14,7 @@ import static java.lang.annotation.RetentionPolicy.*;
 @Documented
 public @interface LowerCase {
 
-	String message() default "invalid unicode letters";
+	String message() default "upper case letters exist";
   Class[] groups() default {};
   Class[] payload() default {};
 }

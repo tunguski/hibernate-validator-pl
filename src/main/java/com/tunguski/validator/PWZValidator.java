@@ -41,10 +41,6 @@ public class PWZValidator extends ValidatorBase<PWZ, String> {
    * Numer PWZ: 5425740
    */
 	public boolean isValid(String value, ConstraintValidatorContext context) {
-		if (value == null) {
-			return true;
-		}
-
-		return Validators.isValidPWZ(removeNonDigit(value));
+		return value == null || Validators.isValidPWZ(removeNonDigit(value));
 	}
 }

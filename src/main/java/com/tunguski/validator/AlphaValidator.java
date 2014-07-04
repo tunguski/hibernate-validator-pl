@@ -26,8 +26,6 @@ public class AlphaValidator implements ConstraintValidator<Alpha, String> {
   public boolean isValid(String v, ConstraintValidatorContext context) {
     if (v == null) {
       return true;
-    } else if (!(v instanceof String)) {
-      return false;
     }
 
     if (!allowNumeric && !allowSpace) {
