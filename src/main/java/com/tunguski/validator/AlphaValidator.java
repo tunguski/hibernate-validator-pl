@@ -23,19 +23,11 @@ public class AlphaValidator implements ConstraintValidator<Alpha, String> {
     allowSpace = configuration.allowSpace();
   }
 
-  public boolean isValid(String v, ConstraintValidatorContext context) {
-    if (v == null) {
-      return true;
-    }
-
-    if (!allowNumeric && !allowSpace) {
-      return v.matches(onlyUnicodeLetters);
-    } else if (allowNumeric && !allowSpace) {
-      return v.matches(unicodeLettersWithDigits);
-    } else if (allowNumeric && allowSpace) {
-      return v.matches(unicodeLettersWithDigitsAndWhiteSpaces);
-    } else {
-      return v.matches(unicodeLettersWithSpaces);
-    }
+  public boolean isValid(String value, ConstraintValidatorContext context) {
+    return value == null
+        || (!allowNumeric && !allowSpace && value.matches(onlyUnicodeLetters))
+        || (allowNumeric && !allowSpace && value.matches(unicodeLettersWithDigits))
+        || (allowNumeric && allowSpace && value.matches(unicodeLettersWithDigitsAndWhiteSpaces))
+        || value.matches(unicodeLettersWithSpaces);
   }
 }

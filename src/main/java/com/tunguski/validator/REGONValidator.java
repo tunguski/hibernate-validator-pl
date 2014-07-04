@@ -4,6 +4,9 @@ import org.apache.commons.lang.StringUtils;
 
 import javax.validation.ConstraintValidatorContext;
 
+import static com.tunguski.validator.Validators.*;
+import static org.apache.commons.lang.StringUtils.*;
+
 
 /**
  * Hibernet Validator for REGON (Rejestr Gospodarki Narodowej)
@@ -17,22 +20,6 @@ public class REGONValidator extends ValidatorBase<REGON, String> {
 
 
 	public boolean isValid(String value, ConstraintValidatorContext context) {
-		if (value == null) {
-			return true;
-		}
-
-		String regon = null;
-
-		if (annotation.digitsOnly()) {
-			regon = value;
-			if (!StringUtils.isNumeric(regon)) {
-				return false;
-			}
-
-		} else {
-			regon = removeNonDigit(value);
-		}
-
-		return Validators.isValidREGON(regon);
+    return value == null || (annotation.digitsOnly() && !isNumeric(value)) || isValidREGON(removeNonDigit(value));
 	}
 }
