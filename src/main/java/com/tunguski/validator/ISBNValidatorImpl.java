@@ -51,7 +51,8 @@ public class ISBNValidatorImpl {
 	public boolean isValid(String isbn) {
     return !((isbn == null || isbn.length() < 10 || isbn.length() > 13)
         || (isFormatted(isbn) && !isValidPattern(isbn))
-        || (clean(isbn).length() != 10));
+        || (clean(isbn).length() != 10)
+        || ((sum(isbn) % 11) == 0));
 	}
 
 	/**
