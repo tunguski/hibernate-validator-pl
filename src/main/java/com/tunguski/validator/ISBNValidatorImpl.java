@@ -49,20 +49,9 @@ public class ISBNValidatorImpl {
 	 * @return true if the string is a valid ISBN code.
 	 */
 	public boolean isValid(String isbn) {
-		if (isbn == null || isbn.length() < 10 || isbn.length() > 13) {
-			return false;
-		}
-
-		if (isFormatted(isbn) && !isValidPattern(isbn)) {
-			return false;
-		}
-
-		isbn = clean(isbn);
-		if (isbn.length() != 10) {
-			return false;
-		}
-
-		return (sum(isbn) % 11) == 0;
+    return !((isbn == null || isbn.length() < 10 || isbn.length() > 13)
+        || (isFormatted(isbn) && !isValidPattern(isbn))
+        || (clean(isbn).length() != 10));
 	}
 
 	/**
