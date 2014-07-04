@@ -124,6 +124,7 @@
           <aggregate>true</aggregate>
           <instrumentation>
             <ignoreTrivial>true</ignoreTrivial>
+            <ignoreMethodAnnotation>java.lang.annotation.Target</ignoreMethodAnnotation>
           </instrumentation>
         </configuration>
       </plugin>
