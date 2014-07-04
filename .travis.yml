@@ -1,4 +1,4 @@
 language: java
-script: mvn package
+script: mvn package cobertura:cobertura coveralls:cobertura
 jdk:
   - oraclejdk7
