@@ -2,6 +2,8 @@ package com.tunguski.validator;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static com.tunguski.validator.Validators.*;
 import static org.junit.Assert.*;
 
@@ -74,6 +76,12 @@ public class TestValidators {
 
     assertFalse(isValidPWZ("16176"));
     assertFalse(isValidPWZ(null));
+  }
+
+
+  @Test
+  public void testCountSummary() throws Exception {
+    assertNull(countSummary("432", new ArrayList<Integer>()));
   }
 }
 

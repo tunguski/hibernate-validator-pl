@@ -24,6 +24,8 @@ public class TestREGONValidator extends AbstractValidatorTest {
   public void testIsValid() throws Exception {
     model.setRegon("732065814");
     assertTrue(validator.validateProperty(model, "regon").isEmpty());
+    model.setRegon("23511332857188");
+    assertTrue(validator.validateProperty(model, "regon").isEmpty());
   }
 }
 
