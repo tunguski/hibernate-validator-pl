@@ -1,7 +1,5 @@
 package com.tunguski.validator;
 
-import org.apache.commons.lang.StringUtils;
-
 import javax.validation.ConstraintValidatorContext;
 
 import static com.tunguski.validator.Validators.*;

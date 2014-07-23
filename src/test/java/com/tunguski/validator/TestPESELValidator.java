@@ -1,19 +1,6 @@
 package com.tunguski.validator;
 
-import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import org.springframework.validation.Errors;
-import org.springframework.validation.MapBindingResult;
-import org.springframework.validation.ValidationUtils;
-
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 
 import static org.junit.Assert.*;
 

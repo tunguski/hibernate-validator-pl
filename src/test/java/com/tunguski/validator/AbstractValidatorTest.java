@@ -1,7 +1,6 @@
 package com.tunguski.validator;
 
 import org.junit.BeforeClass;
-import org.junit.Test;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
