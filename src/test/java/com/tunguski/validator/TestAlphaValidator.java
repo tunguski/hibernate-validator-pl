@@ -8,17 +8,37 @@ public class TestAlphaValidator extends AbstractValidatorTest {
 
 
   @Test
-  public void testIsInvalid() throws Exception {
-    model.setAlpha("f!da");
-    isValid(validator.validateProperty(model, "alpha"),
-        "invalid unicode letters");
+  public void testIsValid() throws Exception {
+    model.setAlpha("fdasfda");
+    assertTrue(validator.validateProperty(model, "alpha").isEmpty());
   }
 
 
   @Test
-  public void testIsValid() throws Exception {
-    model.setAlpha("fdasfda");
-    assertTrue(validator.validateProperty(model, "alpha").isEmpty());
+  public void testIsInvalid_withExclamationMark() throws Exception {
+    model.setAlpha("f!da");
+    isValid(validator.validateProperty(model, "alpha"), "invalid unicode letters");
+  }
+
+
+  @Test
+  public void testIsInvalid_withNumber() throws Exception {
+    model.setAlpha("f432da");
+    isValid(validator.validateProperty(model, "alpha"), "invalid unicode letters");
+  }
+
+
+  @Test
+  public void testIsValid_allowNumber_withNumber() throws Exception {
+    model.setAlpha1("ffdadsą432432źłóŚĆŻ");
+    isValid(validator.validateProperty(model, "alpha"));
+  }
+
+
+  @Test
+  public void testIsValid_allowSpace_withSpace() throws Exception {
+    model.setAlpha1("ffdads ąźłóŚĆŻ");
+    isValid(validator.validateProperty(model, "alpha"));
   }
 }
 

@@ -13,6 +13,10 @@ public class ValidationTestModel {
   protected String nip;
   @Alpha
   protected String alpha;
+  @Alpha(allowNumeric = true)
+  protected String alpha1;
+  @Alpha(allowSpace = true)
+  protected String alpha2;
   @AsciiPrintable
   protected String asciiPrintable;
   @ISBN
@@ -80,6 +84,18 @@ public class ValidationTestModel {
   }
   public void setAsciiPrintable(String asciiPrintable) {
     this.asciiPrintable = asciiPrintable;
+  }
+  public String getAlpha1() {
+    return alpha1;
+  }
+  public void setAlpha1(String alpha1) {
+    this.alpha1 = alpha1;
+  }
+  public String getAlpha2() {
+    return alpha2;
+  }
+  public void setAlpha2(String alpha2) {
+    this.alpha2 = alpha2;
   }
 }
 
