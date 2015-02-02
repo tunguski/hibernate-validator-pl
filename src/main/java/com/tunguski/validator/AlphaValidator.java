@@ -24,10 +24,18 @@ public class AlphaValidator implements ConstraintValidator<Alpha, String> {
   }
 
   public boolean isValid(String value, ConstraintValidatorContext context) {
-    return value == null
-        || (!allowNumeric && !allowSpace && value.matches(onlyUnicodeLetters))
-        || (allowNumeric && !allowSpace && value.matches(unicodeLettersWithDigits))
-        || (allowNumeric && allowSpace && value.matches(unicodeLettersWithDigitsAndWhiteSpaces))
-        || value.matches(unicodeLettersWithSpaces);
+    if (value == null) {
+      return true;
+    } else if (!allowNumeric && !allowSpace && value.matches(onlyUnicodeLetters)) {
+      return true;
+    } else if (allowNumeric && !allowSpace && value.matches(unicodeLettersWithDigits)) {
+      return true;
+    } else if (allowNumeric && allowSpace && value.matches(unicodeLettersWithDigitsAndWhiteSpaces)) {
+      return true;
+    } else if (value.matches(unicodeLettersWithSpaces)) {
+      return true;
+    }
+
+    return false;
   }
 }
