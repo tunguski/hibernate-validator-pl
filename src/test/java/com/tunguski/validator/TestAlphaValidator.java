@@ -8,6 +8,13 @@ public class TestAlphaValidator extends AbstractValidatorTest {
 
 
   @Test
+  public void testIsValidWhenEmpty() throws Exception {
+    model.setAlpha(null);
+    assertTrue(validator.validateProperty(model, "alpha").isEmpty());
+  }
+
+
+  @Test
   public void testIsValid() throws Exception {
     model.setAlpha("fdasfda");
     assertTrue(validator.validateProperty(model, "alpha").isEmpty());
