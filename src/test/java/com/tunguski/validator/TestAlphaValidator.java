@@ -31,14 +31,21 @@ public class TestAlphaValidator extends AbstractValidatorTest {
   @Test
   public void testIsValid_allowNumber_withNumber() throws Exception {
     model.setAlpha1("ffdadsą432432źłóŚĆŻ");
-    isValid(validator.validateProperty(model, "alpha"));
+    isValid(validator.validateProperty(model, "alpha1"));
   }
 
 
   @Test
   public void testIsValid_allowSpace_withSpace() throws Exception {
-    model.setAlpha1("ffdads ąźłóŚĆŻ");
-    isValid(validator.validateProperty(model, "alpha"));
+    model.setAlpha2("ffdads ąźłóŚĆŻ");
+    isValid(validator.validateProperty(model, "alpha2"));
+  }
+
+
+  @Test
+  public void testIsValid_allowSpaceAndNumeric_withSpaceAndNumeric() throws Exception {
+    model.setAlpha3("ffdads ąźłóŚĆŻ 432432");
+    isValid(validator.validateProperty(model, "alpha3"));
   }
 }
 

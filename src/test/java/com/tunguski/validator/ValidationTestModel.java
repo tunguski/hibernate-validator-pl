@@ -17,6 +17,8 @@ public class ValidationTestModel {
   protected String alpha1;
   @Alpha(allowSpace = true)
   protected String alpha2;
+  @Alpha(allowSpace = true, allowNumeric = true)
+  protected String alpha3;
   @AsciiPrintable
   protected String asciiPrintable;
   @ISBN
@@ -96,6 +98,12 @@ public class ValidationTestModel {
   }
   public void setAlpha2(String alpha2) {
     this.alpha2 = alpha2;
+  }
+  public String getAlpha3() {
+    return alpha3;
+  }
+  public void setAlpha3(String alpha3) {
+    this.alpha3 = alpha3;
   }
 }
 
