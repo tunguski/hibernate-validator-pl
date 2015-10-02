@@ -2,5 +2,6 @@ test:
   stage: build
   script:
     - mvn clean install
+    - add_comments.sh
   tags:
     - mvn
