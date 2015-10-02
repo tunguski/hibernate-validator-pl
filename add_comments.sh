@@ -24,8 +24,15 @@ read -r -d '' NOTE << EOM
 | Checkstyle | $CHECKSTYLE |
 | Pmd | $PMD |
 | Find Bugs | $FIND_BUGS |
+| **Cobertura** | |
 EOM
 
+for i in `cat target/site/cobertura/coverage.xml | grep lines-covered | cut -d " " -f 2- | sed 's/ /\n/g'`
+do 
+  TMP=$(echo $i | sed 's/[">]//g' | sed 's/=/ \| /g' | sed 's/^/\| /g' | sed 's/$/ \|/g')
+  TMP+=$'\n'
+  NOTE="$NOTE $TMP"
+done
 
 curl --data $"note=$NOTE" \
     -H "PRIVATE-TOKEN: $USER_PRIVATE_TOKEN" \
