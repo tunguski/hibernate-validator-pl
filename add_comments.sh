@@ -16,7 +16,7 @@ URL=$HOST/api/v3/projects/$PROJECT_ID/repository/commits/$COMMIT_ID/comments
 
 echo $URL
 
-read -r -d '' VARIABLE << EOM
+read -r -d '' NOTE << EOM
 # Build result
 
 | Type | Result |
