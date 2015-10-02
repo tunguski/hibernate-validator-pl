@@ -20,7 +20,7 @@ read -r -d '' NOTE << EOM
 # Build result
 
 | Type | Result |
-| ---- | ----- |
+| ----: | ----- |
 | **Checkstyle** | $CHECKSTYLE |
 | **Pmd** | $PMD |
 | **Find Bugs** | $FIND_BUGS |
