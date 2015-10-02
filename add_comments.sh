@@ -16,11 +16,16 @@ URL=$HOST/api/v3/projects/$PROJECT_ID/repository/commits/$COMMIT_ID/comments
 
 echo $URL
 
-NOTE=$"# Build result"
-NOTE=$"$NOTE\n| Type | Result |"
-NOTE=$"$NOTE\n| Checkstyle | $CHECKSTYLE |"
-NOTE=$"$NOTE\n| Pmd | $PMD |"
-NOTE=$"$NOTE\n| Find Bugs | $FIND_BUGS |"
+read -r -d '' VARIABLE << EOM
+# Build result
+
+| Type | Result |
+| ---- | ----- |
+| Checkstyle | $CHECKSTYLE |
+| Pmd | $PMD |
+| Find Bugs | $FIND_BUGS |
+EOM
+
 
 curl --data $"note=$NOTE" \
     -H "PRIVATE-TOKEN: $USER_PRIVATE_TOKEN" \
