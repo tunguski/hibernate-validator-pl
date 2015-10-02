@@ -31,7 +31,7 @@ for i in `cat target/site/cobertura/coverage.xml | grep lines-covered | cut -d "
 do 
   TMP=$(echo $i | sed 's/[">]//g' | sed 's/=/ \| /g' | sed 's/^/\| /g' | sed 's/$/ \|/g')
   TMP+=$'\n'
-  NOTE="$NOTE $TMP"
+  NOTE="$NOTE$TMP"
 done
 
 curl --data $"note=$NOTE" \
