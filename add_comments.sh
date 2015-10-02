@@ -21,9 +21,9 @@ read -r -d '' NOTE << EOM
 
 | Type | Result |
 | ---- | ----- |
-| Checkstyle | $CHECKSTYLE |
-| Pmd | $PMD |
-| Find Bugs | $FIND_BUGS |
+| **Checkstyle** | $CHECKSTYLE |
+| **Pmd** | $PMD |
+| **Find Bugs** | $FIND_BUGS |
 | **Cobertura** | |
 EOM
 
