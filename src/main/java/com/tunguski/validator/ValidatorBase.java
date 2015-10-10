@@ -1,4 +1,4 @@
-package com.tunguski.validator;
+package pl.matsuo.validator;
 
 import javax.validation.ConstraintValidator;
 import java.lang.annotation.Annotation;

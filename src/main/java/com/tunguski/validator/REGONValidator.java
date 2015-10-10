@@ -1,8 +1,8 @@
-package com.tunguski.validator;
+package pl.matsuo.validator;
 
 import javax.validation.ConstraintValidatorContext;
 
-import static com.tunguski.validator.Validators.*;
+import static pl.matsuo.validator.Validators.*;
 import static org.apache.commons.lang.StringUtils.*;
 
 

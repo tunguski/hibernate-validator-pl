@@ -1,10 +1,10 @@
-package com.tunguski.validator;
+package pl.matsuo.validator;
 
 import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static com.tunguski.validator.Validators.*;
+import static pl.matsuo.validator.Validators.*;
 import static org.junit.Assert.*;
 
 

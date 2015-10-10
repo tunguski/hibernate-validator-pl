@@ -1,4 +1,4 @@
-package com.tunguski.validator;
+package pl.matsuo.validator;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -1,4 +1,4 @@
-package com.tunguski.validator;
+package pl.matsuo.validator;
 
 import org.apache.commons.lang.StringUtils;
 
