@@ -6,7 +6,7 @@
   <groupId>pl.matsuo</groupId>
   <artifactId>hibernate-validator-pl</artifactId>
   <packaging>jar</packaging>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.1.0</version>
   <name>hibernate-validator-pl</name>
   <description>Set of Polish Hibernate Validators</description>
   <url>https://github.com/tunguski/hibernate-validator-pl</url>
@@ -103,7 +103,8 @@
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>2.9.1</version>
         <configuration>
-          <failOnError>false</failOnError>
+          <!--failOnError>false</failOnError-->
+          <additionalparam>-Xdoclint:none</additionalparam>
         </configuration>
         <executions>
           <execution>
@@ -133,7 +134,7 @@
       <plugin>
         <groupId>org.eluder.coveralls</groupId>
         <artifactId>coveralls-maven-plugin</artifactId>
-        <version>2.3.0</version>
+        <version>4.0.0</version>
       </plugin>
 
       <plugin>
@@ -174,13 +175,6 @@
     </extensions>
   </build>
 
-  <repositories>
-    <repository>
-      <id>repo.matsuo-it.com</id>
-      <url>http://repo.matsuo-it.com/</url>
-    </repository>
-  </repositories>
-
   <licenses>
     <license>
       <name>The Apache License, Version 2.0</name>
@@ -208,5 +202,10 @@
       <id>ossrh</id>
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
   </distributionManagement>
 </project>
+
